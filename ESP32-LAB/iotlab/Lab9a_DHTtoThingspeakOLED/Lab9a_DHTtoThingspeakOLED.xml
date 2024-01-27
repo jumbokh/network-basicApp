@@ -1,0 +1,186 @@
+<xml version="F2" board="ESP32 Dev Module" xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="0" x="91" y="30">
+    <field name="BOARD_TYPE">ESP32</field>
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id="V}O:sDrt;FeiDF{o-63z">
+        <field name="OLED_TYPE">U8G2_SSD1306_128X64_NONAME_F_HW_I2C</field>
+        <next>
+          <block type="oled_display_set_chinese_font" id="bbss?4JsS+IA]p8oonee">
+            <next>
+              <block type="linkit_wifi_wait_until_ready" id="vNo`e:rxb55[Eok`#tU7">
+                <value name="SSID">
+                  <block type="text" id="Lwzye)NZdBur3AD(Vxo4">
+                    <field name="TEXT">jumbo</field>
+                  </block>
+                </value>
+                <value name="PASSWORD">
+                  <block type="text" id="Zz}f}R6sNFDQudD@qF=j">
+                    <field name="TEXT">0953313123</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="1">
+        <statement name="CONTENT">
+          <block type="oled_display_draw_commands" id="KMO~mF3s5Fu:U_K+D0aK">
+            <statement name="DRAW_CMD">
+              <block type="oled_display_draw_text" id="Kpc;y@f;Y6i-`u+{W46x">
+                <value name="START_X">
+                  <block type="math_number" id="@vp(7|k}1[r8-Q$K=tlY">
+                    <field name="NUM">15</field>
+                  </block>
+                </value>
+                <value name="START_Y">
+                  <block type="math_number" id="8IG@vMKXfZztE9K5wKmV">
+                    <field name="NUM">10</field>
+                  </block>
+                </value>
+                <value name="CONTENT">
+                  <block type="text_join" id="%c,=l+d/k*R_x`})_fgj">
+                    <mutation items="3"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="rikU2uiWCG#bnDzDU[P$">
+                        <field name="TEXT">溫度:</field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="dht_read_pin" id="MlLY3lb]a1ot.8zHUR9/">
+                        <field name="SENSOR">DHT11</field>
+                        <field name="TYPE">C</field>
+                        <value name="PIN">
+                          <block type="math_number" id="(wd6h)OkM}JMj4;-C:VM">
+                            <field name="NUM">4</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="ADD2">
+                      <block type="text" id=".W?V#6N0A:N{q7ZYI^b+">
+                        <field name="TEXT"> C</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="oled_display_draw_text" id="m#W^hd{e9Dv[qgI?U=6g">
+                    <value name="START_X">
+                      <block type="math_number" id="B/a9pnR}whJ[M*/a_]I2">
+                        <field name="NUM">15</field>
+                      </block>
+                    </value>
+                    <value name="START_Y">
+                      <block type="math_number" id="U[b.2M#mRuZ6YHOax++N">
+                        <field name="NUM">30</field>
+                      </block>
+                    </value>
+                    <value name="CONTENT">
+                      <block type="text_join" id="Y?,.2##(I8pl,.]JHCW]">
+                        <mutation items="3"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="@,Xnh`hhq6Ef}^EuHN0{">
+                            <field name="TEXT">溼度:</field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="dht_read_pin" id="DZg]D=vfXC{@+biEG7rd">
+                            <field name="SENSOR">DHT11</field>
+                            <field name="TYPE">h</field>
+                            <value name="PIN">
+                              <block type="math_number" id="9fMT+}BFa/j/)*lzn_L%">
+                                <field name="NUM">4</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="ADD2">
+                          <block type="text" id="WW]X5^:OdFn)sNf`ELxw">
+                            <field name="TEXT">%</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="things_get_url" id="F^jtd#N!JKpc0!OgVum(">
+                <value name="KEY">
+                  <block type="text" id="xoGt~GiRU^Rv3D=SI#hU">
+                    <field name="TEXT">D8VZUX68CESSH1TK</field>
+                  </block>
+                </value>
+                <value name="FIELD1">
+                  <block type="dht_read_pin" id="I8vfryfY(q-@F]MEDy=w">
+                    <field name="SENSOR">DHT11</field>
+                    <field name="TYPE">C</field>
+                    <value name="PIN">
+                      <block type="math_number" id="{PQiAGY;bJ^hIM]7{PL}">
+                        <field name="NUM">4</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="FIELD2">
+                  <block type="dht_read_pin" id=":Q5qlt)}M#M*6Objvwi9">
+                    <field name="SENSOR">DHT11</field>
+                    <field name="TYPE">h</field>
+                    <value name="PIN">
+                      <block type="math_number" id="wcbc@YqyV^!nc(Dp:Hj0">
+                        <field name="NUM">4</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="FIELD3">
+                  <block type="math_number" id="AziyeF7aQO-jG$v}|-Qo">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="FIELD4">
+                  <block type="math_number" id="og*N3h@%,7}_BYQnWEh;">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="FIELD5">
+                  <block type="math_number" id=".J,=x}gIZ[Cf)xB@9(jR">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="FIELD6">
+                  <block type="math_number" id=";QNiNLM~Ezh`4p)GR0Xa">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="FIELD7">
+                  <block type="math_number" id="B4i$_!-Mpx0U[4*gWj^9">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="FIELD8">
+                  <block type="math_number" id="zmMhLJ,5n(6R,N9b|mRz">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="delay_custom" id="rm7(We+{fLuBsMj9Ff}+">
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="ZyUmza;:27?byuYdf7z7">
+                        <field name="NUM">15000</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

@@ -1,0 +1,93 @@
+<xml version="F2" board="ESP32 Dev Module" xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="0" x="100" y="50">
+    <field name="BOARD_TYPE">ESP32</field>
+    <statement name="CONTENT">
+      <block type="linkit_wifi_wait_until_ready" id="d:5.SZxCXw4j)*evwhqc">
+        <value name="SSID">
+          <block type="text" id="4nn11DvibSW:jzb59UDY">
+            <field name="TEXT">jumbo</field>
+          </block>
+        </value>
+        <value name="PASSWORD">
+          <block type="text" id="DJgQQ;/vhz}J^8v9x^C|">
+            <field name="TEXT">0953313123</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="1">
+        <statement name="CONTENT">
+          <block type="things_get_url" id="8:-vVlS2NAvyW}B8X8zk">
+            <value name="KEY">
+              <block type="text" id="?x!C]Y`Oi:TiQIiX@a!}">
+                <field name="TEXT">D8VZUX68CESSH1TK</field>
+              </block>
+            </value>
+            <value name="FIELD1">
+              <block type="dht_read_pin" id="M$r8vr8mn+baS8e2h:{N">
+                <field name="SENSOR">DHT11</field>
+                <field name="TYPE">C</field>
+                <value name="PIN">
+                  <block type="math_number" id="0Z:da@EpN@(IE$p_^yf=">
+                    <field name="NUM">4</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="FIELD2">
+              <block type="dht_read_pin" id="`V4R3Ik!^%JBL%)Xkb+D">
+                <field name="SENSOR">DHT11</field>
+                <field name="TYPE">h</field>
+                <value name="PIN">
+                  <block type="math_number" id="kG/AZxPm4N@7VcENnGf5">
+                    <field name="NUM">4</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="FIELD3">
+              <block type="math_number" id="~hyv##EYOgMJAzsIjdXK">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="FIELD4">
+              <block type="math_number" id="R+Gdi`,jx7m}%D6?9[hl">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="FIELD5">
+              <block type="math_number" id="?ovn[*-fU_$W:V39{f%_">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="FIELD6">
+              <block type="math_number" id="{CKzl;q7cQSdyF/W|nMG">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="FIELD7">
+              <block type="math_number" id="5Rdj9Mp)p8Px9nLWU1P,">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="FIELD8">
+              <block type="math_number" id="1^[(9!Ie3Bg77@R[.=wS">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="delay_custom" id="F3O.$=lE{hhD??5SFSwx">
+                <value name="DELAY_TIME">
+                  <block type="math_number" id="(Ursj)OnTRZhk)Xi4ZLp">
+                    <field name="NUM">15000</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

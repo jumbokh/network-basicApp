@@ -1,0 +1,105 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="board_initializes_setup" id="31" x="100" y="50">
+    <field name="BOARD_TYPE">ESP32</field>
+    <statement name="CONTENT">
+      <block type="BitMatrixLed_matrix_pin" id="32" inline="true">
+        <value name="pin">
+          <block type="math_number" id="33">
+            <field name="NUM">32</field>
+          </block>
+        </value>
+        <value name="leds">
+          <block type="math_number" id="34">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="35">
+        <statement name="CONTENT">
+          <block type="BitMatrixLed_matrix_color_one_n" id="156" inline="true">
+            <value name="N">
+              <block type="math_number" id="157">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <value name="RGB">
+              <block type="BitMatrixLed_color" id="158">
+                <field name="RGB">#FF0000</field>
+              </block>
+            </value>
+            <next>
+              <block type="delay_custom" id="159" inline="false">
+                <value name="DELAY_TIME">
+                  <block type="math_number" id="160">
+                    <field name="NUM">1000</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="BitMatrixLed_matrix_color_one_n" id="161" inline="true">
+                    <value name="N">
+                      <block type="math_number" id="162">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <value name="RGB">
+                      <block type="BitMatrixLed_color" id="163">
+                        <field name="RGB">#33cc00</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="delay_custom" id="164" inline="false">
+                        <value name="DELAY_TIME">
+                          <block type="math_number" id="165">
+                            <field name="NUM">1000</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="BitMatrixLed_matrix_color_one_n" id="166" inline="true">
+                            <value name="N">
+                              <block type="math_number" id="167">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <value name="RGB">
+                              <block type="BitMatrixLed_color" id="168">
+                                <field name="RGB">#000099</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="delay_custom" id="169" inline="false">
+                                <value name="DELAY_TIME">
+                                  <block type="math_number" id="170">
+                                    <field name="NUM">1000</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="BitMatrixLed_matrix_clear" id="36">
+                                    <next>
+                                      <block type="delay_custom" id="37" inline="false">
+                                        <value name="DELAY_TIME">
+                                          <block type="math_number" id="38">
+                                            <field name="NUM">3000</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

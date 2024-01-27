@@ -1,0 +1,111 @@
+<xml version="F2" board="ESP32 Dev Module" xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="0" x="100" y="50">
+    <field name="BOARD_TYPE">ESP32</field>
+    <statement name="CONTENT">
+      <block type="linkit_wifi_wait_until_ready" id="6IwqG+M((p)IzB{1TmFF">
+        <value name="SSID">
+          <block type="text" id="NL!]BX]sL_rK6qas6dF@">
+            <field name="TEXT">jumbo</field>
+          </block>
+        </value>
+        <value name="PASSWORD">
+          <block type="text" id="%iq=p-d8yu^#m]?s4xUC">
+            <field name="TEXT">0953313123</field>
+          </block>
+        </value>
+        <next>
+          <block type="fu_mqtt_setup" id="Wv5l(QfF(:C|Iw9pH,LI">
+            <value name="server">
+              <block type="text" id="OXa;pVxpg7%BbxkJY;6i">
+                <field name="TEXT">mqttgo.io</field>
+              </block>
+            </value>
+            <value name="port">
+              <block type="math_number" id="GgXTA+!;m*=j(!jy5mx^">
+                <field name="NUM">1883</field>
+              </block>
+            </value>
+            <value name="user">
+              <block type="text" id="nKlr`*O(Q`p%*H(UK,Zq">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+            <value name="password">
+              <block type="text" id="#.EWe!(wv/-x1h?M%;v/">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+            <value name="clientid">
+              <block type="text" id="3APuuM0hI]`9YR79F;Tw">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="1">
+        <statement name="CONTENT">
+          <block type="fu_mqtt_senddata" id="SxiNym`sA:Po]V)snX)F">
+            <value name="topic">
+              <block type="text" id="4K8*S^+]h_2)P^lyo`l?">
+                <field name="TEXT">jumbo/room/temp</field>
+              </block>
+            </value>
+            <value name="text">
+              <block type="cast_number" id="vZjMM]IQWMaIh:/ZEDPg">
+                <field name="TYPE">String(%1)</field>
+                <value name="VAR">
+                  <block type="dht_read_pin" id="oqO7jCTNn.YNoJ:@m?[H">
+                    <field name="SENSOR">DHT11</field>
+                    <field name="TYPE">C</field>
+                    <value name="PIN">
+                      <block type="math_number" id="xhySlYiq4@a2b8C9OE~3">
+                        <field name="NUM">4</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="fu_mqtt_senddata" id="~1+d(=uAKdUyZ+7tNw9B">
+                <value name="topic">
+                  <block type="text" id="Kn0OtSk{GUdU9CT{:LSO">
+                    <field name="TEXT">jumbo/room/humi</field>
+                  </block>
+                </value>
+                <value name="text">
+                  <block type="cast_number" id="*X?K#GI9KnYm)V@lFWbQ">
+                    <field name="TYPE">String(%1)</field>
+                    <value name="VAR">
+                      <block type="dht_read_pin" id="d4hR*RqO:~SGcN+evy8l">
+                        <field name="SENSOR">DHT11</field>
+                        <field name="TYPE">h</field>
+                        <value name="PIN">
+                          <block type="math_number" id=".$7!#Tg.wU-JJ)?f$F[k">
+                            <field name="NUM">4</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="delay_custom" id="5|H/RPg0=]oHdB:0{}15">
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="TA.x]]Q*JWjxz0-^1*Q#">
+                        <field name="NUM">1000</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

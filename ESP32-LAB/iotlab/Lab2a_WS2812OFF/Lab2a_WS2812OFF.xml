@@ -1,0 +1,36 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="board_initializes_setup" id="171" x="100" y="50">
+    <field name="BOARD_TYPE">ESP32</field>
+    <statement name="CONTENT">
+      <block type="BitMatrixLed_matrix_pin" id="172" inline="true">
+        <value name="pin">
+          <block type="math_number" id="173">
+            <field name="NUM">32</field>
+          </block>
+        </value>
+        <value name="leds">
+          <block type="math_number" id="174">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="175">
+        <statement name="CONTENT">
+          <block type="BitMatrixLed_matrix_clear" id="176">
+            <next>
+              <block type="delay_custom" id="177" inline="false">
+                <value name="DELAY_TIME">
+                  <block type="math_number" id="178">
+                    <field name="NUM">3000</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

@@ -1,0 +1,48 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="board_initializes_setup" id="958" x="63" y="-312">
+    <field name="BOARD_TYPE">ESP32</field>
+    <next>
+      <block type="initializes_loop" id="959">
+        <statement name="CONTENT">
+          <block type="serial_println" id="967" inline="false">
+            <value name="CONTENT">
+              <block type="dht_read_pin" id="978" inline="true">
+                <field name="SENSOR">DHT11</field>
+                <field name="TYPE">C</field>
+                <value name="PIN">
+                  <block type="math_number" id="979">
+                    <field name="NUM">4</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="serial_println" id="980" inline="false">
+                <value name="CONTENT">
+                  <block type="dht_read_pin" id="981" inline="true">
+                    <field name="SENSOR">DHT11</field>
+                    <field name="TYPE">h</field>
+                    <value name="PIN">
+                      <block type="math_number" id="982">
+                        <field name="NUM">4</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="delay_custom" id="994" inline="false">
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="995">
+                        <field name="NUM">1000</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

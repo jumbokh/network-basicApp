@@ -1,0 +1,27 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="board_initializes_setup" id="181" x="135" y="85">
+    <field name="BOARD_TYPE">ESP32</field>
+    <next>
+      <block type="initializes_loop" id="182">
+        <statement name="CONTENT">
+          <block type="serial_print" id="183" inline="false">
+            <value name="CONTENT">
+              <block type="inout_digital_read" id="184">
+                <field name="PIN">4</field>
+              </block>
+            </value>
+            <next>
+              <block type="delay_custom" id="185" inline="false">
+                <value name="DELAY_TIME">
+                  <block type="math_number" id="186">
+                    <field name="NUM">500</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

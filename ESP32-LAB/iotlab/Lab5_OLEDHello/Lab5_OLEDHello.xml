@@ -1,0 +1,63 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="board_initializes_setup" id="334" x="13" y="-312">
+    <field name="BOARD_TYPE">ESP32</field>
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id="549">
+        <next>
+          <block type="oled_display_set_chinese_font" id="618"></block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="335">
+        <statement name="CONTENT">
+          <block type="oled_display_draw_commands" id="687">
+            <statement name="DRAW_CMD">
+              <block type="oled_display_draw_text" id="688" inline="true">
+                <value name="START_X">
+                  <block type="math_number" id="689">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="START_Y">
+                  <block type="math_number" id="690">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="CONTENT">
+                  <block type="text" id="691">
+                    <field name="TEXT">HELLO</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="oled_display_draw_line" id="692" inline="true">
+                    <value name="START_X">
+                      <block type="math_number" id="693">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="START_Y">
+                      <block type="math_number" id="694">
+                        <field name="NUM">11</field>
+                      </block>
+                    </value>
+                    <value name="END_X">
+                      <block type="math_number" id="695">
+                        <field name="NUM">30</field>
+                      </block>
+                    </value>
+                    <value name="END_Y">
+                      <block type="math_number" id="696">
+                        <field name="NUM">11</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

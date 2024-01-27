@@ -1,0 +1,62 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="board_initializes_setup" id="703" x="13" y="-312">
+    <field name="BOARD_TYPE">ESP32</field>
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id="773">
+        <next>
+          <block type="oled_display_set_chinese_font" id="842"></block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="704">
+        <statement name="CONTENT">
+          <block type="oled_display_draw_commands" id="911">
+            <statement name="DRAW_CMD">
+              <block type="oled_display_draw_text" id="912" inline="true">
+                <value name="START_X">
+                  <block type="math_number" id="913">
+                    <field name="NUM">20</field>
+                  </block>
+                </value>
+                <value name="START_Y">
+                  <block type="math_number" id="914">
+                    <field name="NUM">10</field>
+                  </block>
+                </value>
+                <value name="CONTENT">
+                  <block type="text_join" id="927" inline="false">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="934">
+                        <field name="TEXT">亮度:</field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="inout_custom_analog_read" id="943" inline="true">
+                        <value name="PIN_ANALOGREAD">
+                          <block type="math_number" id="944">
+                            <field name="NUM">36</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <next>
+              <block type="delay_custom" id="956" inline="false">
+                <value name="DELAY_TIME">
+                  <block type="math_number" id="957">
+                    <field name="NUM">500</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
